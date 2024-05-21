@@ -1,0 +1,35 @@
+
+
+  .menuE ul {
+    list-style-type: none;
+    margin: 10;
+    padding: 0;
+    display: flex;
+    align-content: center;
+    
+  }
+  
+  .menuE ul li {
+    padding: 14px 20px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .menuE ul li.active {
+    background-color: #4CAF50;
+  }
+  
+  .menuE ul li:hover {
+    background-color: #555;
+  }
+
+  .menuE{
+    background-color: #4CAF50;
+    flex-direction: row;
+    display: flex;
+    
+  }
+  
+  .menuE img{
+    width: 30%;
+  }
