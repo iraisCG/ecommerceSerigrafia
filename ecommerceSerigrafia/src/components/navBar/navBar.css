@@ -1,22 +1,25 @@
 
 
   .menuE ul {
+   
+
     list-style-type: none;
     margin: 10;
     padding: 0;
     display: flex;
-    align-content: center;
+    
     
   }
   
   .menuE ul li {
-    padding: 14px 20px;
+    padding: 5px 20px;
     cursor: pointer;
     color: white;
+    
   }
   
   .menuE ul li.active {
-    background-color: #4CAF50;
+    background-color: #f0ab22;
   }
   
   .menuE ul li:hover {
@@ -24,12 +27,15 @@
   }
 
   .menuE{
-    background-color: #4CAF50;
+    background-color: #eb9a0d;
     flex-direction: row;
     display: flex;
+    align-items: center;
+  
+    justify-content: space-around;
     
   }
   
   .menuE img{
-    width: 30%;
+    width: 55%;
   }
