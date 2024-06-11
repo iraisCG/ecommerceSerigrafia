@@ -9,12 +9,19 @@
     display: flex;
     
     
+    
   }
+ a{
+  text-decoration: none;
+  color: white;
+ }
+
   
   .menuE ul li {
     padding: 5px 20px;
     cursor: pointer;
     color: white;
+    
     
   }
   
@@ -23,7 +30,7 @@
   }
   
   .menuE ul li:hover {
-    background-color: #555;
+    background-color: #ffcf40;
   }
 
   .menuE{

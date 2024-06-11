@@ -1,5 +1,6 @@
 import React from 'react'
 import './item.css'
+import { Link } from 'react-router-dom'
 
 /** Contenido de la card de información del producto */
 const Item = ({prod}) => {
@@ -11,6 +12,10 @@ const Item = ({prod}) => {
             <p> {prod.descripcion} </p>
             <h3> $ {prod.precio}  </h3>
         </div>
+
+        <button>
+        <Link to={`/producto/${prod.id}`}>Ver detalle</Link>
+        </button>
      
 
     </div>

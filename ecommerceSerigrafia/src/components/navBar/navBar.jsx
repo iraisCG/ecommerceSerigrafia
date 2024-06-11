@@ -16,7 +16,7 @@ const navBar = () => {
       <div>
         <ul>
           <li>
-            Todo
+          <Link to='/'>Todo</Link>
           </li>
           <li>
           <Link to='/categorias/Químicos'>  Químicos</Link>
