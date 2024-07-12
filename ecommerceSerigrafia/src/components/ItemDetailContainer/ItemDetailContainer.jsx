@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { getProductById } from '../../data/asyncMock'
+import './itemDetailContainer.css'
+import {  useParams } from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
+import { doc, getDoc } from 'firebase/firestore'
+import { db } from '../../config/firebase'
+
 
 const ItemDetailContainer = () => {
 
@@ -9,27 +12,45 @@ const ItemDetailContainer = () => {
     const [ loading, setLoading] = useState (true)
     const {productId} = useParams()
 
+
     
 
     useEffect(() => {
-        getProductById(productId)
-        .then((data) => setProducto(data))
-        .catch((error) => console.log(error))
-        .finally(() => setLoading (false))
-    }, []);
+      const getData = async () => {
+        const queryRef = doc(db,'productos', productId)
 
-    if (loading) {
-        return <div>Cargando...</div>; // Muestra un mensaje de carga mientras se obtienen los datos
-      }
-    
-      if (!producto) {
-        return <div>Producto no encontrado</div>; // Muestra un mensaje si no se encuentra el producto
+        const response = await getDoc(queryRef)
+
+        const newItem = {
+          ...response.data(),
+          id: response.id
+        }
+
+        setProducto(newItem)
+        setLoading(false)
       }
 
+      getData()
+    }, [])
+
+   
      
   return (
     <div>
+
+      {
+        loading  ?
+
+        <div class="cargar">
+        <span class="loader"></span>          
+        </div> 
+
+        :
+
         <ItemDetail {...producto}/>
+        
+      }
+        
     </div>
   )
 }

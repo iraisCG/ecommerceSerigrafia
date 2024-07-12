@@ -9,7 +9,8 @@ const navBar = () => {
     <div className='menuE'>
 
       <div>
-        <img src='../medios/logo_nav.png' alt='Logo'/>
+        
+        <Link to='/'><img src='../medios/logo_nav.png' alt='Logo'/></Link>
       </div>
      
       
